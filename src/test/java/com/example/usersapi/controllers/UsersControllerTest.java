@@ -53,6 +53,8 @@ public class UsersControllerTest {
 
         given(mockUserRepository.findAll()).willReturn(mockUsers);
         given(mockUserRepository.findById(1L)).willReturn(java.util.Optional.ofNullable(firstUser));
+        given(mockUserRepository.findById(4L)).willReturn(null);
+
     }
 
     @Test
