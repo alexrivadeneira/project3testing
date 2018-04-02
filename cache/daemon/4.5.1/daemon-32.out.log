@@ -222,8 +222,8 @@ Download https://repo.maven.apache.org/maven2/org/springframework/boot/spring-bo
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.0.0.RELEASE)
 
-2018-04-01 22:42:07.559  INFO 69 --- [           main] com.example.usersapi.DemoApplication     : Starting DemoApplication on 055d7c58f7b7 with PID 69 (/users-api/build/classes/java/main started by root in /users-api)
-2018-04-01 22:42:07.763  INFO 69 --- [           main] com.example.usersapi.DemoApplication     : The following profiles are active: dev
+2018-04-01 22:42:07.559  INFO 69 --- [           main] com.example.usersapi.UsersApiApplication     : Starting DemoApplication on 055d7c58f7b7 with PID 69 (/users-api/build/classes/java/main started by root in /users-api)
+2018-04-01 22:42:07.763  INFO 69 --- [           main] com.example.usersapi.UsersApiApplication     : The following profiles are active: dev
 2018-04-01 22:42:09.280  INFO 69 --- [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@65466a6a: startup date [Sun Apr 01 22:42:09 GMT 2018]; root of context hierarchy
 2018-04-01 22:42:17.101  INFO 69 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8ed79771] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 2018-04-01 22:42:18.503  INFO 69 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)

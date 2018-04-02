@@ -60,8 +60,8 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.0.0.RELEASE)
 
-2018-04-01 23:41:31.970  INFO 67 --- [           main] com.example.usersapi.DemoApplication     : Starting DemoApplication on b80d88601799 with PID 67 (/users-api/build/classes/java/main started by root in /users-api)
-2018-04-01 23:41:31.984  INFO 67 --- [           main] com.example.usersapi.DemoApplication     : The following profiles are active: dev
+2018-04-01 23:41:31.970  INFO 67 --- [           main] com.example.usersapi.UsersApiApplication     : Starting DemoApplication on b80d88601799 with PID 67 (/users-api/build/classes/java/main started by root in /users-api)
+2018-04-01 23:41:31.984  INFO 67 --- [           main] com.example.usersapi.UsersApiApplication     : The following profiles are active: dev
 2018-04-01 23:41:32.323  INFO 67 --- [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@309e345f: startup date [Sun Apr 01 23:41:32 GMT 2018]; root of context hierarchy
 2018-04-01 23:41:37.651  INFO 67 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
 2018-04-01 23:41:37.822  INFO 67 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
@@ -82,4 +82,4 @@
 2018-04-01 23:41:41.706  INFO 67 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
 2018-04-01 23:41:42.259  INFO 67 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
 2018-04-01 23:41:42.404  INFO 67 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2018-04-01 23:41:42.424  INFO 67 --- [           main] com.example.usersapi.DemoApplication     : Started DemoApplication in 13.062 seconds (JVM running for 15.023)
+2018-04-01 23:41:42.424  INFO 67 --- [           main] com.example.usersapi.UsersApiApplication     : Started DemoApplication in 13.062 seconds (JVM running for 15.023)
