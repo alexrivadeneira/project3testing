@@ -52,3 +52,13 @@ dependencies {
 
 }
 
+
+test {
+	dependsOn cleanTest
+
+	testLogging {
+		exceptionFormat "full"
+		events "skipped", "passed", "failed"
+		displayGranularity 2
+	}
+}
