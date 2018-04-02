@@ -8,7 +8,17 @@ services:
       working_dir: /users-api
       volumes:
         - .:/users-api
+      depends_on:
+        - postgresdev
       command: './gradlew bootRun'
       environment:
         - GRADLE_USER_HOME=cache
         - SPRING_PROFILES_ACTIVE=dev
+  postgresdev:
+        image: postgres
+        ports:
+         - "5432:5432"
+        environment:
+         - POSTGRES_PASSWORD=password
+         - POSTGRES_USER=postgres
+         - POSTGRES_DB=pgdev
