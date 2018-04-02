@@ -18,7 +18,7 @@ import static org.hamcrest.core.Is.is;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-public class UsersApiApplicationTests {
+public class DemoApplicationTests {
 
 	@Autowired
 	private UserRepository userRepository;
