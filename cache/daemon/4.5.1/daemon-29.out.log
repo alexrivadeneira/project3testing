@@ -1,51 +1,85 @@
-22:45:52.349 [DEBUG] [org.gradle.launcher.daemon.bootstrap.DaemonMain] Assuming the daemon was started with following jvm opts: [-XX:+HeapDumpOnOutOfMemoryError, -Xmx1024m, -Dfile.encoding=UTF-8, -Duser.country, -Duser.language=en, -Duser.variant]
-22:45:52.554 [INFO] [org.gradle.launcher.daemon.server.Daemon] start() called on daemon - DefaultDaemonContext[uid=39d3d7b6-7220-4859-8bf1-fcc41860b1ae,javaHome=/opt/jdk1.8.0_162,daemonRegistryDir=/users-api/cache/daemon,pid=29,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
-22:45:52.584 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface eth0
-22:45:52.589 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
-22:45:52.593 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a multicast interface? true
-22:45:52.597 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /172.19.0.2
-22:45:52.601 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote multicast interface eth0
-22:45:52.606 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface lo
-22:45:52.611 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? true
-22:45:52.616 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a multicast interface? false
-22:45:52.619 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding loopback address /127.0.0.1
-22:45:52.625 [DEBUG] [org.gradle.internal.remote.internal.inet.TcpIncomingConnector] Listening on [ae496e53-3c4d-479b-99e1-2e4e166502e8 port:46883, addresses:[/127.0.0.1]].
-22:45:52.636 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] Daemon starting at: Sun Apr 01 22:45:52 GMT 2018, with address: [ae496e53-3c4d-479b-99e1-2e4e166502e8 port:46883, addresses:[/127.0.0.1]]
-22:45:52.640 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Advertising the daemon address to the clients: [ae496e53-3c4d-479b-99e1-2e4e166502e8 port:46883, addresses:[/127.0.0.1]]
-22:45:52.645 [DEBUG] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Advertised daemon context: DefaultDaemonContext[uid=39d3d7b6-7220-4859-8bf1-fcc41860b1ae,javaHome=/opt/jdk1.8.0_162,daemonRegistryDir=/users-api/cache/daemon,pid=29,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
-22:45:52.651 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Storing daemon address: [ae496e53-3c4d-479b-99e1-2e4e166502e8 port:46883, addresses:[/127.0.0.1]], context: DefaultDaemonContext[uid=39d3d7b6-7220-4859-8bf1-fcc41860b1ae,javaHome=/opt/jdk1.8.0_162,daemonRegistryDir=/users-api/cache/daemon,pid=29,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
-22:45:52.674 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
-22:45:52.684 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
-22:45:52.723 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
-22:45:52.729 [LIFECYCLE] [org.gradle.launcher.daemon.server.Daemon] Daemon server started.
-22:45:52.736 [DEBUG] [org.gradle.launcher.daemon.bootstrap.DaemonStartupCommunication] Completed writing the daemon greeting. Closing streams...
-22:45:52.747 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] stopOnExpiration() called on daemon
-22:45:52.754 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] awaitExpiration() called on daemon
-22:45:52.762 [DEBUG] [org.gradle.internal.remote.internal.inet.TcpIncomingConnector] Accepted connection from /127.0.0.1:53440 to /127.0.0.1:46883.
-22:45:52.764 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
-22:45:52.964 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 14: received class org.gradle.launcher.daemon.protocol.Build
-22:45:52.969 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 14: Received non-IO message from client: Build{id=d798cb8e-7566-46d6-b457-0460f47ce0d7.1, currentDir=/users-api}
-22:45:52.973 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=d798cb8e-7566-46d6-b457-0460f47ce0d7.1, currentDir=/users-api}.
-22:45:52.977 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=d798cb8e-7566-46d6-b457-0460f47ce0d7.1, currentDir=/users-api} with connection: socket connection from /127.0.0.1:46883 to /127.0.0.1:53440.
-22:45:52.983 [ERROR] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=d798cb8e-7566-46d6-b457-0460f47ce0d7.1, currentDir=/users-api}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:46883 to /127.0.0.1:53440] after 0.0 minutes of idle
-22:45:52.987 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Marking the daemon as busy, address: [ae496e53-3c4d-479b-99e1-2e4e166502e8 port:46883, addresses:[/127.0.0.1]]
-22:45:52.991 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [ae496e53-3c4d-479b-99e1-2e4e166502e8 port:46883, addresses:[/127.0.0.1]]
-22:45:53.001 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
-22:45:53.008 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
-22:45:53.024 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
-22:45:53.029 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] resetting idle timer
-22:45:53.032 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
-22:45:53.035 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=d798cb8e-7566-46d6-b457-0460f47ce0d7.1, currentDir=/users-api}. Dispatching build started information...
-22:45:53.039 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 16: dispatching class org.gradle.launcher.daemon.protocol.BuildStarted
-22:45:53.059 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: {PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/jdk/bin, JAVA_JCE=unlimited, SPRING_PROFILES_ACTIVE=dev, JAVA_HOME=/opt/jdk, OLDPWD=/users-api, GLIBC_VERSION=2.27-r0, LANG=C.UTF-8, JAVA_VERSION_MAJOR=8, GRADLE_USER_HOME=cache, HOSTNAME=f1e9d74ddfa3, GLIBC_REPO=https://github.com/sgerrand/alpine-pkg-glibc, JAVA_VERSION_MINOR=162, PWD=/users-api, JAVA_PACKAGE=jdk, JAVA_VERSION_BUILD=12, HOME=/root, SHLVL=1}
-22:45:53.086 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 14: received class org.gradle.launcher.daemon.protocol.CloseInput
-22:45:53.091 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 14: Received IO message from client: org.gradle.launcher.daemon.protocol.CloseInput@1c567df4
-22:45:53.106 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
-22:45:53.111 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 29). The daemon log file: /users-api/cache/daemon/4.5.1/daemon-29.out.log
-22:45:53.117 [INFO] [org.gradle.launcher.daemon.server.exec.LogAndCheckHealth] Starting build in new daemon [memory: 954.7 MB]
-22:45:53.124 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] Closing daemon's stdin at end of input.
-22:45:53.129 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] The daemon will no longer process any standard input.
-22:45:53.135 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
-22:45:53.149 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=39d3d7b6-7220-4859-8bf1-fcc41860b1ae,javaHome=/opt/jdk1.8.0_162,daemonRegistryDir=/users-api/cache/daemon,pid=29,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
+23:41:08.570 [DEBUG] [org.gradle.launcher.daemon.bootstrap.DaemonMain] Assuming the daemon was started with following jvm opts: [-XX:+HeapDumpOnOutOfMemoryError, -Xmx1024m, -Dfile.encoding=UTF-8, -Duser.country, -Duser.language=en, -Duser.variant]
+23:41:08.863 [INFO] [org.gradle.launcher.daemon.server.Daemon] start() called on daemon - DefaultDaemonContext[uid=6683640e-d934-4007-836e-cfff9b25170c,javaHome=/opt/jdk1.8.0_162,daemonRegistryDir=/users-api/cache/daemon,pid=29,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
+23:41:08.921 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface eth0
+23:41:08.927 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? false
+23:41:08.931 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a multicast interface? true
+23:41:08.935 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote address /172.19.0.2
+23:41:08.939 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding remote multicast interface eth0
+23:41:08.944 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding IP addresses for network interface lo
+23:41:08.949 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a loopback interface? true
+23:41:08.953 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Is this a multicast interface? false
+23:41:08.957 [DEBUG] [org.gradle.internal.remote.internal.inet.InetAddresses] Adding loopback address /127.0.0.1
+23:41:08.965 [DEBUG] [org.gradle.internal.remote.internal.inet.TcpIncomingConnector] Listening on [352f6fd9-f19c-4dbc-ad5b-b723cfed6457 port:34535, addresses:[/127.0.0.1]].
+23:41:08.978 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] Daemon starting at: Sun Apr 01 23:41:08 GMT 2018, with address: [352f6fd9-f19c-4dbc-ad5b-b723cfed6457 port:34535, addresses:[/127.0.0.1]]
+23:41:08.982 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Advertising the daemon address to the clients: [352f6fd9-f19c-4dbc-ad5b-b723cfed6457 port:34535, addresses:[/127.0.0.1]]
+23:41:08.986 [DEBUG] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Advertised daemon context: DefaultDaemonContext[uid=6683640e-d934-4007-836e-cfff9b25170c,javaHome=/opt/jdk1.8.0_162,daemonRegistryDir=/users-api/cache/daemon,pid=29,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
+23:41:08.992 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Storing daemon address: [352f6fd9-f19c-4dbc-ad5b-b723cfed6457 port:34535, addresses:[/127.0.0.1]], context: DefaultDaemonContext[uid=6683640e-d934-4007-836e-cfff9b25170c,javaHome=/opt/jdk1.8.0_162,daemonRegistryDir=/users-api/cache/daemon,pid=29,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
+23:41:09.025 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+23:41:09.038 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+23:41:09.081 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+23:41:09.088 [LIFECYCLE] [org.gradle.launcher.daemon.server.Daemon] Daemon server started.
+23:41:09.096 [DEBUG] [org.gradle.launcher.daemon.bootstrap.DaemonStartupCommunication] Completed writing the daemon greeting. Closing streams...
+23:41:09.124 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] stopOnExpiration() called on daemon
+23:41:09.129 [DEBUG] [org.gradle.launcher.daemon.server.Daemon] awaitExpiration() called on daemon
+23:41:09.132 [DEBUG] [org.gradle.internal.remote.internal.inet.TcpIncomingConnector] Accepted connection from /127.0.0.1:45492 to /127.0.0.1:34535.
+23:41:09.134 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
+23:41:09.463 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 14: received class org.gradle.launcher.daemon.protocol.Build
+23:41:09.468 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 14: Received non-IO message from client: Build{id=4e3b7aba-2b04-4284-935e-4b7db5674541.1, currentDir=/users-api}
+23:41:09.472 [INFO] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Received command: Build{id=4e3b7aba-2b04-4284-935e-4b7db5674541.1, currentDir=/users-api}.
+23:41:09.476 [DEBUG] [org.gradle.launcher.daemon.server.DefaultIncomingConnectionHandler] Starting executing command: Build{id=4e3b7aba-2b04-4284-935e-4b7db5674541.1, currentDir=/users-api} with connection: socket connection from /127.0.0.1:34535 to /127.0.0.1:45492.
+23:41:09.485 [ERROR] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] Command execution: started DaemonCommandExecution[command = Build{id=4e3b7aba-2b04-4284-935e-4b7db5674541.1, currentDir=/users-api}, connection = DefaultDaemonConnection: socket connection from /127.0.0.1:34535 to /127.0.0.1:45492] after 0.0 minutes of idle
+23:41:09.489 [INFO] [org.gradle.launcher.daemon.server.DaemonRegistryUpdater] Marking the daemon as busy, address: [352f6fd9-f19c-4dbc-ad5b-b723cfed6457 port:34535, addresses:[/127.0.0.1]]
+23:41:09.493 [DEBUG] [org.gradle.launcher.daemon.registry.PersistentDaemonRegistry] Marking busy by address: [352f6fd9-f19c-4dbc-ad5b-b723cfed6457 port:34535, addresses:[/127.0.0.1]]
+23:41:09.510 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Waiting to acquire exclusive lock on daemon addresses registry.
+23:41:09.517 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Lock acquired on daemon addresses registry.
+23:41:09.534 [DEBUG] [org.gradle.cache.internal.DefaultFileLockManager] Releasing lock on daemon addresses registry.
+23:41:09.541 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] resetting idle timer
+23:41:09.545 [DEBUG] [org.gradle.launcher.daemon.server.DaemonStateCoordinator] daemon is running. Sleeping until state changes.
+23:41:09.548 [INFO] [org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy] Daemon is about to start building Build{id=4e3b7aba-2b04-4284-935e-4b7db5674541.1, currentDir=/users-api}. Dispatching build started information...
+23:41:09.552 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 16: dispatching class org.gradle.launcher.daemon.protocol.BuildStarted
+23:41:09.574 [DEBUG] [org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment] Configuring env variables: {PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/jdk/bin, JAVA_JCE=unlimited, SPRING_PROFILES_ACTIVE=dev, JAVA_HOME=/opt/jdk, OLDPWD=/users-api, GLIBC_VERSION=2.27-r0, LANG=C.UTF-8, JAVA_VERSION_MAJOR=8, GRADLE_USER_HOME=cache, HOSTNAME=b80d88601799, GLIBC_REPO=https://github.com/sgerrand/alpine-pkg-glibc, JAVA_VERSION_MINOR=162, PWD=/users-api, JAVA_PACKAGE=jdk, JAVA_VERSION_BUILD=12, HOME=/root, SHLVL=1}
+23:41:09.613 [DEBUG] [org.gradle.launcher.daemon.server.exec.LogToClient] About to start relaying all logs to the client via the connection.
+23:41:09.618 [INFO] [org.gradle.launcher.daemon.server.exec.LogToClient] The client will now receive all logging from the daemon (pid: 29). The daemon log file: /users-api/cache/daemon/4.5.1/daemon-29.out.log
+23:41:09.619 [DEBUG] [org.gradle.launcher.daemon.server.SynchronizedDispatchConnection] thread 14: received class org.gradle.launcher.daemon.protocol.CloseInput
+23:41:09.627 [DEBUG] [org.gradle.launcher.daemon.server.DefaultDaemonConnection] thread 14: Received IO message from client: org.gradle.launcher.daemon.protocol.CloseInput@3a327ddb
+23:41:09.630 [INFO] [org.gradle.launcher.daemon.server.exec.LogAndCheckHealth] Starting build in new daemon [memory: 954.7 MB]
+23:41:09.638 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] Closing daemon's stdin at end of input.
+23:41:09.651 [INFO] [org.gradle.launcher.daemon.server.exec.ForwardClientInput] The daemon will no longer process any standard input.
+23:41:09.654 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] The daemon has started executing the build.
+23:41:09.666 [DEBUG] [org.gradle.launcher.daemon.server.exec.ExecuteBuild] Executing build with daemon context: DefaultDaemonContext[uid=6683640e-d934-4007-836e-cfff9b25170c,javaHome=/opt/jdk1.8.0_162,daemonRegistryDir=/users-api/cache/daemon,pid=29,idleTimeout=10800000,daemonOpts=-XX:+HeapDumpOnOutOfMemoryError,-Xmx1024m,-Dfile.encoding=UTF-8,-Duser.country,-Duser.language=en,-Duser.variant]
 :compileJava
-thread 14: client disconnection detected, canceling the build
+:processResources UP-TO-DATE
+:classes
+:bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.0.0.RELEASE)
+
+2018-04-01 23:41:31.970  INFO 67 --- [           main] com.example.usersapi.DemoApplication     : Starting DemoApplication on b80d88601799 with PID 67 (/users-api/build/classes/java/main started by root in /users-api)
+2018-04-01 23:41:31.984  INFO 67 --- [           main] com.example.usersapi.DemoApplication     : The following profiles are active: dev
+2018-04-01 23:41:32.323  INFO 67 --- [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@309e345f: startup date [Sun Apr 01 23:41:32 GMT 2018]; root of context hierarchy
+2018-04-01 23:41:37.651  INFO 67 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-04-01 23:41:37.822  INFO 67 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-04-01 23:41:37.822  INFO 67 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.28
+2018-04-01 23:41:37.873  INFO 67 --- [ost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-04-01 23:41:38.628  INFO 67 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-04-01 23:41:38.628  INFO 67 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6309 ms
+2018-04-01 23:41:39.351  INFO 67 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-04-01 23:41:39.372  INFO 67 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-04-01 23:41:39.373  INFO 67 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-04-01 23:41:39.373  INFO 67 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-04-01 23:41:39.374  INFO 67 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-04-01 23:41:40.942  INFO 67 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@309e345f: startup date [Sun Apr 01 23:41:32 GMT 2018]; root of context hierarchy
+2018-04-01 23:41:41.339  INFO 67 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-04-01 23:41:41.371  INFO 67 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-04-01 23:41:41.538  INFO 67 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-01 23:41:41.539  INFO 67 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-01 23:41:41.706  INFO 67 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-04-01 23:41:42.259  INFO 67 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-04-01 23:41:42.404  INFO 67 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-04-01 23:41:42.424  INFO 67 --- [           main] com.example.usersapi.DemoApplication     : Started DemoApplication in 13.062 seconds (JVM running for 15.023)
