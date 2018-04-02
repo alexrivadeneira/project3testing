@@ -21,6 +21,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.hamcrest.Matchers.is;
+import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(UsersController.class)
@@ -49,7 +50,9 @@ public class UsersControllerTest {
         Iterable<User> mockUsers =
                 Stream.of(firstUser, secondUser).collect(Collectors.toList());
 
+
         given(mockUserRepository.findAll()).willReturn(mockUsers);
+        given(mockUserRepository.findById(1L)).willReturn(java.util.Optional.ofNullable(firstUser));
     }
 
     @Test
@@ -82,6 +85,38 @@ public class UsersControllerTest {
         this.mockMvc
                 .perform(get("/"))
                 .andExpect(jsonPath("$[0].lastName", is("Person")));
+    }
+
+    @Test
+    public void findUserById_success_returnsStatusOK() throws Exception {
+
+        this.mockMvc
+                .perform(get("/users/1"))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void findUserById_success_returnUserName() throws Exception {
+
+        this.mockMvc
+                .perform(get("/users/1"))
+                .andExpect(jsonPath("$.userName", is("someone")));
+    }
+
+    @Test
+    public void findUserById_success_returnFirstName() throws Exception {
+
+        this.mockMvc
+                .perform(get("/users/1"))
+                .andExpect(jsonPath("$.firstName", is("Ima")));
+    }
+
+    @Test
+    public void findUserById_success_returnLastName() throws Exception {
+
+        this.mockMvc
+                .perform(get("/users/1"))
+                .andExpect(jsonPath("$.lastName", is("Person")));
     }
 
 }
