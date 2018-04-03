@@ -5,6 +5,7 @@ import com.example.usersapi.repositories.UserRepository;
 import javassist.NotFoundException;
 import org.omg.CosNaming.NamingContextPackage.NotFound;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,8 +44,9 @@ public class UsersController {
 
     }
 
+
     @DeleteMapping("/users/{userId}")
-    public HttpStatus deleteUserById(@PathVariable Long userId) {
+    public HttpStatus deleteUserById(@PathVariable Long userId) throws EmptyResultDataAccessException{
         userRepository.deleteById(userId);
         return HttpStatus.OK;
     }
@@ -72,5 +74,13 @@ public class UsersController {
             HttpServletResponse response) throws IOException {
 
         response.sendError(HttpStatus.NOT_FOUND.value(), exception.getMessage());
+    }
+
+    @ExceptionHandler
+    void handleDeleteNotFoundException(
+            EmptyResultDataAccessException exception,
+            HttpServletResponse response) throws IOException {
+
+        response.sendError(HttpStatus.NOT_FOUND.value());
     }
 }
