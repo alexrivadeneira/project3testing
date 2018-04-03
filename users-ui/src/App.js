@@ -20,7 +20,7 @@ class App extends Component {
 
   deleteUser = async (id, index) => {
     try {
-      await axios.delete('/users/${id}');
+      await axios.delete(`/users/${id}`);
       const updatedUsers = [...this.state.users];
       updatedUsers.splice(index, 1);
       this.setState({users: updatedUsers});
