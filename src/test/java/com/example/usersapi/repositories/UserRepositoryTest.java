@@ -1,3 +1,5 @@
+package com.example.usersapi.repositories;
+
 import com.example.usersapi.models.User;
 import com.example.usersapi.repositories.UserRepository;
 import org.junit.Before;
