@@ -12,8 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.*;
+import static org.assertj.core.error.ShouldHave.shouldHave;
 
 import java.util.stream.Stream;
 
@@ -44,16 +46,27 @@ public class UsersUIFeatureTest {
                 "Person"
         );
 
+        userRepository.save(firstUser);
+        Long firstUserId = firstUser.getId();
+
         User secondUser = new User(
                 "someone_else",
                 "Someone",
                 "Else"
         );
 
-        Stream.of(firstUser, secondUser)
-                .forEach(user -> {
-                    userRepository.save(user);
-                });
+        secondUser = userRepository.save(secondUser);
+        Long secondUserId = secondUser.getId();
+
+//        Stream.of(firstUser, secondUser)
+//                .forEach(user -> {
+//                    userRepository.save(user);
+//                });
+
+        System.setProperty("selenide.browser", "Chrome");
+        open("http://localhost:3000");
+
+        $$("[data-user-display]").shouldHave(size(2));
 
     }
 
@@ -63,5 +76,5 @@ public class UsersUIFeatureTest {
 //        $("body").shouldHave(text("React"));
 //    }
 
-    
+
 }
