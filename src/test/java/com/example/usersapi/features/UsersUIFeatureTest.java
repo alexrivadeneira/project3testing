@@ -69,8 +69,10 @@ public class UsersUIFeatureTest {
         $$("[data-user-display]").shouldHave(size(2));
 
         // test deleting a user
-        
-
+        $("#user-" + firstUserId).should(exist);
+        $("#delete-user-" + firstUserId).click();
+        $("#user-" + firstUserId).shouldNot(exist);
+        $$("[data-user-display]").shouldHave(size(1));
     }
 
 //    @Test

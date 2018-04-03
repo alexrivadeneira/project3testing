@@ -9,7 +9,7 @@ class User extends Component{
 					<p>{this.props.userName}</p>
 					<p>{this.props.firstName}</p>
 					<p>{this.props.lastName}</p>
-					<button 
+					<button id={`delete-user-${this.props.id}`}
 						onClick={() => this.props.deleteIdea(this.props.id, this.props.index)}>
 						Delete
 					</button>
