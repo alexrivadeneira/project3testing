@@ -13,9 +13,11 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static org.hamcrest.Matchers.containsString;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -53,8 +55,7 @@ public class UsersControllerTest {
 
         given(mockUserRepository.findAll()).willReturn(mockUsers);
         given(mockUserRepository.findById(1L)).willReturn(java.util.Optional.ofNullable(firstUser));
-        given(mockUserRepository.findById(4L)).willReturn(null);
-
+        given(mockUserRepository.findById(4L)).willReturn(Optional.ofNullable(null));
     }
 
     @Test
@@ -121,4 +122,19 @@ public class UsersControllerTest {
                 .andExpect(jsonPath("$.lastName", is("Person")));
     }
 
+    @Test
+    public void findUserById_failure_userNotFoundReturns404() throws Exception {
+
+        this.mockMvc
+                .perform(get("/users/4"))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    public void findUserById_failure_userNotFoundReturnsNotFoundErrorMessage() throws Exception {
+
+        this.mockMvc
+                .perform(get("/users/4"))
+                .andExpect(status().reason(containsString("User id 4 was not found!")));
+    }
 }

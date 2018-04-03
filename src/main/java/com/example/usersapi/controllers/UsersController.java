@@ -2,10 +2,14 @@ package com.example.usersapi.controllers;
 
 import com.example.usersapi.models.User;
 import com.example.usersapi.repositories.UserRepository;
+import javassist.NotFoundException;
+import org.omg.CosNaming.NamingContextPackage.NotFound;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -28,8 +32,15 @@ public class UsersController {
     }
 
     @GetMapping("/users/{userId}")
-    public Optional<User> findUserById(@PathVariable Long userId) {
-        return userRepository.findById(userId);
+    public Optional<User> findUserById(@PathVariable Long userId) throws NotFoundException{
+        Optional<User> foundUser = userRepository.findById(userId);
+
+        if(!foundUser.isPresent()){
+            throw new NotFoundException("User id " + userId + " was not found!");
+        }
+
+        return foundUser;
+
     }
 
     @DeleteMapping("/users/{userId}")
@@ -53,5 +64,13 @@ public class UsersController {
         userFromDb.setLastName(userRequest.getLastName());
 
         return userRepository.save(userFromDb);
+    }
+
+    @ExceptionHandler
+    void handleUserNotFound(
+            NotFoundException exception,
+            HttpServletResponse response) throws IOException {
+
+        response.sendError(HttpStatus.NOT_FOUND.value(), exception.getMessage());
     }
 }
