@@ -1,4 +1,7 @@
-Below you will find information about this application, how to start the app, and how to run the tests.<br>
+Below you will find:
+**information about this application,
+**how to start the app,
+**and how to run the tests.
 
 ## About this Application
 
