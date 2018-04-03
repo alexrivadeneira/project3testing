@@ -19,6 +19,7 @@ import java.util.stream.Stream;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.mockito.BDDMockito.given;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -136,5 +137,13 @@ public class UsersControllerTest {
         this.mockMvc
                 .perform(get("/users/4"))
                 .andExpect(status().reason(containsString("User id 4 was not found!")));
+    }
+
+    @Test
+    public void deleteUserById_success_returnsStatusOk() throws Exception {
+
+        this.mockMvc
+                .perform(delete("/users/1"))
+                .andExpect(status().isOk());
     }
 }
