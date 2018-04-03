@@ -68,11 +68,19 @@ public class UsersUIFeatureTest {
 
         $$("[data-user-display]").shouldHave(size(2));
 
+        //test adding a user
+        $("#new-user-userName").val("SonnyJim");
+        $("#new-user-firstName").val("Sonny");
+        $("#new-user-lastName").val("Jim");
+        $("#new-user-submit").click();
+
+        $$("[data-user-display").shouldHave(size(3));
+
         // test deleting a user
         $("#user-" + firstUserId).should(exist);
         $("#delete-user-" + firstUserId).click();
         $("#user-" + firstUserId).shouldNot(exist);
-        $$("[data-user-display]").shouldHave(size(1));
+        $$("[data-user-display]").shouldHave(size(2));
     }
 
 //    @Test
