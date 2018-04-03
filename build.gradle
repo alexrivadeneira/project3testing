@@ -63,3 +63,22 @@ test {
 		displayGranularity 2
 	}
 }
+
+
+task runUsersAPITests(type: Exec) {
+	workingDir './users-api'
+	commandLine './gradlew', 'test'
+}
+
+task allTests(type: Test) {
+	dependsOn cleanTest
+	dependsOn runUsersAPITests
+
+	testLogging {
+		exceptionFormat "full"
+		events "skipped", "passed", "failed"
+		displayGranularity 2
+	}
+}
+
+dockerCompose.isRequiredBy(allTests)
