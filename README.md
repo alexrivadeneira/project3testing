@@ -22,5 +22,5 @@ Getting the React UI up:
 ## How to run the tests
 - Make sure docker-compose isn't still running (check with $ docker ps)
 - Check the docker-config.yml file in the root directory to check postgres settings
-- ./gradlew runTests
+- ./gradlew allTests
 - to run individual tests, run ./gradlew -Dtest.single={TESTNAME} test
