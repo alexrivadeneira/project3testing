@@ -46,12 +46,8 @@ public class UserRepositoryTest {
     @Test
     public void findAll_returnsAllUsers() {
         Iterable<User> usersFromDb = userRepository.findAll();
-
-        int resultSize;
-
-        resultSize = (int) usersFromDb.spliterator().getExactSizeIfKnown();
-
-        assertThat(resultSize, is(2));
+        long size = usersFromDb.spliterator().getExactSizeIfKnown();
+        assertThat(size, is(2L));
     }
 
 
