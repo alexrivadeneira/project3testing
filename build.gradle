@@ -22,7 +22,6 @@ apply plugin: 'docker-compose'
 dockerCompose {
 	useComposeFiles = ['docker-compose.yml']
 }
-dockerCompose.isRequiredBy(test)
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
@@ -65,7 +64,7 @@ test {
 
 
 task runUsersAPITests(type: Exec) {
-	workingDir './users-api'
+	workingDir '.'
 	commandLine './gradlew', 'test'
 }
 
@@ -79,5 +78,8 @@ task allTests(type: Test) {
 		displayGranularity 2
 	}
 }
+
+
+dockerCompose.isRequiredBy(test)
 
 dockerCompose.isRequiredBy(allTests)
