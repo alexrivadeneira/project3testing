@@ -18,15 +18,27 @@ class UserNewForm extends Component{
 		const updatedUser = { ...this.state.newUser}
 		updatedUser[updatedProperty] = newValue;
 		this.setState({newUser: updatedUser});
+
 	}
 
 	render(){
+
+		const formStyle = {
+			background: "#bada55",
+			width: "70%",
+			margin: "0 auto",
+			borderRight: "3px solid black",
+			borderBottom: "5px solid black",
+			borderRadius: "7px",
+			padding: "15px",
+		}
+
 		return(
 			<div>
-				<h2>Make New User</h2>
-				<form>
+				<h2>Sign Up!!</h2>
+				<form style={formStyle}>
 					<div>
-						<h4>UserName</h4>
+						<h4>username</h4>
 						<input
 							id="new-user-userName"
 							name="userName"
